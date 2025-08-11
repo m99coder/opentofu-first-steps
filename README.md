@@ -27,12 +27,12 @@ Providers required by configuration:
 
 ## AWS
 
-Get the latest ARM-based Amazon Linux 2 AMI version using the AWS CLI like this:
+Get the latest ARM-based Amazon Linux 2023 AMI version using the AWS CLI like this:
 
 ```shell
 → aws ec2 describe-images \
     --owners amazon \
-    --filters "Name=name,Values=amzn2-ami-hvm-*-arm64-gp2" "Name=state,Values=available" \
+    --filters "Name=name,Values=al2023-*-arm64" "Name=state,Values=available" \
     --query 'Images | sort_by(@, &CreationDate)[-1]' \
     --output table
 ```
@@ -68,8 +68,18 @@ In case you want to recreate the instance, you can use `tofu taint` as follows:
 → tofu apply -var-file my.tfvars [-auto-approve]
 ```
 
+Hint: SSH into the EC2 instance and check `/var/log/cloud-init-output.log` to see if there was any error during the setup.
+
 Finally, clean up.
 
 ```shell
 → tofu destroy -var-file my.tfvars [-auto-approve]
 ```
+
+## Azure
+
+_tbw._
+
+## GCP
+
+_tbw._

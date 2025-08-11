@@ -4,10 +4,10 @@ locals {
 }
 
 resource "aws_instance" "example" {
-  ami              = var.ami
-  instance_type    = var.instance_type
-  key_name         = aws_key_pair.example.key_name
-  user_data_base64 = var.user_data
+  ami           = var.ami
+  instance_type = var.instance_type
+  key_name      = aws_key_pair.example.key_name
+  user_data     = var.user_data
 
   tags = {
     name = local.full_instance_name
