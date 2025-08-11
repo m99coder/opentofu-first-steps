@@ -27,7 +27,7 @@ Providers required by configuration:
 
 ## AWS
 
-Get the latest ARM-based Amazon Linux 2023 AMI version using the AWS CLI like this:
+Get the latest ARM-based Amazon Linux 2 AMI version using the AWS CLI like this:
 
 ```shell
 → aws ec2 describe-images \
