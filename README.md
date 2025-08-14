@@ -50,9 +50,7 @@ Get a matching instance type eligible for the free tier using the AWS CLI like t
 Now we can plan and apply the plan and check the state afterwards:
 
 ```shell
-→ echo "name_prefix = \"opentofu-first-steps\"" >> my.tfvars
-
-cat > my.tfvars <<EOF
+→ cat > my.tfvars <<EOF
 name_prefix = "opentofu-first-steps"
 ssh_key     = "~/.ssh/id_ed25519.pub"
 EOF
